@@ -1,10 +1,15 @@
 function login() {
   var user = document.getElementById("username").value;
   var pass = document.getElementById("password").value;
+  var msg = document.getElementById("message");
 
   if (user === "" || pass === "") {
-    document.getElementById("message").innerText = "Enter both fields";
+    msg.innerText = "Enter both fields";
   } else {
-    document.getElementById("message").innerText = "Logged in as " + user;
+    msg.innerText = "";
+    // Store the username temporarily
+    sessionStorage.setItem("user", user);
+    // Redirect to logout page
+    window.location.href = "logout.html";
   }
 }
