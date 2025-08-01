@@ -1,22 +1,14 @@
-function login() {
-  var user = document.getElementById("username").value;
-  var pass = document.getElementById("password").value;
-  var msg = document.getElementById("message");
-
-  if (user === "" || pass === "") {
-    msg.innerText = "Enter both fields";
+window.onload = function() {
+  var user = sessionStorage.getItem("user");
+  if (user) {
+    document.getElementById("username-display").innerText = user;
   } else {
-    msg.innerText = "";
-    document.getElementById("login-box").style.display = "none";
-    document.getElementById("logout-box").style.display = "block";
-    document.getElementById("user-display").innerText = user;
+    // If user not logged in, redirect to login
+    window.location.href = "login.html";
   }
-}
+};
 
 function logout() {
-  document.getElementById("login-box").style.display = "block";
-  document.getElementById("logout-box").style.display = "none";
-  document.getElementById("username").value = "";
-  document.getElementById("password").value = "";
-  document.getElementById("message").innerText = "";
+  sessionStorage.removeItem("user");
+  window.location.href = "login.html";
 }

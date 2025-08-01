@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login Page</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Logout</title>
+  <link rel="stylesheet" href="logout.css">
 </head>
 <body>
+  <h2>Welcome, <span id="username-display"></span>!</h2>
+  <button onclick="logout()">Logout</button>
 
-  <div id="login-box">
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username"><br><br>
-    <input type="password" id="password" placeholder="Password"><br><br>
-    <button onclick="login()">Login</button>
-    <p id="message"></p>
-  </div>
-
-  <div id="logout-box" style="display: none;">
-    <h2>Welcome, <span id="user-display"></span>!</h2>
-    <button onclick="logout()">Logout</button>
-  </div>
-
-  <script src="script.js"></script>
+  <script src="logout.js"></script>
 </body>
 </html>
